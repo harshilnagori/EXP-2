@@ -2,23 +2,146 @@
 # Harshil Nagori
 # EnTC A2
 # 24070123046
-AIM: To study and implement C++ Program Structure (Data Types)
+Aim
 
-SOFTWARE USED: VS Code
+To:
 
-THEORY: C++ programs follow a well-defined structure that helps organize code logically and efficiently. A basic C++ program includes:
+    Understand and use data types in C++
 
-Preprocessor Directives: These start with # and tell the compiler which libraries to include, such as #include.
-Main Function: int main() is where execution begins. Every C++ program must have it.
-Body of the Program: Enclosed in {}, it contains declarations, logic, and function calls.
-Return Statement: Usually return 0;, indicating successful program termination.
-Data Types in C++ Data types specify the type of data a variable can hold, and they help the compiler manage memory and operations correctly. 🔹 Fundamental Data Types:
+    Explore storage classes – auto, static, extern, register
 
-int: Stores integers (e.g., int age = 20;)
-float: Stores decimal numbers (e.g., float temp = 98.6;)
-char: Stores single characters (e.g., char grade = 'A';)
-bool: Stores Boolean values (true or false)
-double: Stores large or precise decimal values 🔹 Derived and User-defined Types:
-Arrays, Pointers, and Functions (Derived)
-Structures, Classes, and Enums (User-defined) Each type serves a unique purpose in problem-solving and is foundational for building complex systems.
-🔚 Conclusion Understanding C++ program structure and data types is essential for writing efficient and error-free code. The structure gives clarity and flow to the program, while data types ensure proper handling and storage of data. Mastery of these concepts lays the groundwork for exploring more advanced topics like memory management, object-oriented programming, and real-world application development.
+    Learn about variable scope and how many bytes are allocated to each data type
+
+Objectives
+
+🔹 Apply different storage classes 🔹 Understand the storage, scope, and default values of each class 🔹 Learn how to check the memory size of data types using sizeof
+Program Overview
+Syntax of the program
+
+We create a user-defined function to see how variables behave under different storage classes.
+
+The main() function calls that user-defined function.
+
+We use the sizeof operator to find how many bytes are used by each data type.
+Auto Storage Class
+
+Auto is the default storage class for all local variables.
+
+These variables exist inside functions and get deleted when function ends.
+
+Their default value is undefined (garbage).
+
+auto int x;
+
+Extern Storage Class
+
+Used to refer to a global variable declared outside the function.
+
+extern tells the compiler the variable exists somewhere else (cannot initialize it here).
+
+Its default value is garbage.
+
+extern int x;
+
+Static Storage Class
+
+Keeps the variable alive through all function calls – it doesn’t reset.
+
+Used mostly in functions to preserve previous values.
+
+Default value is zero (0).
+
+static int x;
+
+Register Storage Class
+
+Tells compiler to store the variable in a CPU register (for faster access).
+
+You can’t use &x with register variables because they don’t have a memory address.
+
+Default value is garbage.
+
+register int x;
+
+What I Used
+
+Storage Classes: auto, extern, static, register
+
+Data Types: int, float, char, bool, short, long, double
+
+sizeof operator to check data type sizes
+Sample Output
+Auto Storage Class
+
+Size of variable: 4
+The variable is :6
+
+Address of func variable a: 0x7ffccd69c61c
+Size of variable: 4
+The variable is :6
+
+Address of func variable a: 0x7ffccd69c61c
+Size of variable: 4
+The variable is :6
+
+The variable is :7
+Address of global variable a: 0x404040
+
+Static Storage Class
+
+Address of func variable a: 0x404194
+Size of variable: 4
+The variable is :1
+
+Address of func variable a: 0x404194
+Size of variable: 4
+The variable is :2
+
+Address of func variable a: 0x404194
+Size of variable: 4
+The variable is :3
+
+The variable is :5
+Address of global variable a: 0x404040
+
+Register Storage Class
+
+Size of variable: 4
+The variable is :-1170925895
+
+Size of variable: 4
+The variable is :-1170925895
+
+Size of variable: 4
+The variable is :-1170925895
+
+The variable is :4
+Address of global variable a: 0x404040
+
+Extern Stoareg Class
+
+Address of func variable a: 0x404040
+Size of variable: 4
+The variable is :4
+
+Address of func variable a: 0x404040
+Size of variable: 4
+The variable is :5
+
+Address of func variable a: 0x404040
+Size of variable: 4
+The variable is :6
+
+The variable is :6
+Address of global variable a: 0x404040
+
+Size of datatype
+
+Size of various datatypes
+Integer: 4
+Float: 4
+Boolean: 1
+Long Integer: 8
+Short Integer: 2
+Double: 8
+Character: 1
